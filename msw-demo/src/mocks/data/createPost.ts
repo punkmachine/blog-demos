@@ -1,8 +1,14 @@
 import type { IPost } from '@/types/Posts';
 
-export const createPost = (): IPost => ({
-  "title": "testTitle",
-  "body": "testBody",
-  "userId": 1,
+interface IRequestBody {
+  title: string,
+  body: string,
+  userId: number,
+};
+
+export const createPost = (body: IRequestBody): IPost => ({
+  "title": body.title,
+  "body": body.body,
+  "userId": body.userId,
   "id": 101
 });

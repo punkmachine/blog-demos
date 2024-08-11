@@ -11,7 +11,7 @@ const errors = ref({
 });
 
 onMounted(() => {
-  fetch('https://jsonplaceholder.typicode.com/posts?test=test')
+  fetch('https://jsonplaceholder.typicode.com/posts?limit=15')
     .then(response => response.json())
     .then(json => {
       data.value = json;

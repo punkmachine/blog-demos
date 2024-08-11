@@ -1,11 +1,11 @@
 import { HttpResponse } from 'msw';
 import { getPosts } from '../data/getPosts';
 
-export function getPostsHandler({ params, request }) {
-  console.log('params >>>', params);
-  console.log('request >>>', request);
+export function getPostsHandler({ request }) {
+  const searchParams = new URLSearchParams(new URL(request.url).search);
+  const limit = Number(searchParams.get('limit'));
 
-  return HttpResponse.json(getPosts(), {
+  return HttpResponse.json(getPosts(limit), {
     status: 200,
   });
 }
