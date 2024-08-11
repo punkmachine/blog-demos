@@ -9,12 +9,10 @@ function isProduction() { // mock для demo, лучше использоват
 const prepare = async () => {
   if (!isProduction()) {
     const { worker } = await import('./mocks');
-    await worker.start();
-
-    Promise.resolve();
+    return worker.start();
   }
 
-  return Promise.resolve();
+  return;
 };
 
 const app = createApp(App);
