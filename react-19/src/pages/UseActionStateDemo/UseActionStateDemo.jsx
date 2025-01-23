@@ -25,6 +25,16 @@ export const UseActionStateDemo = () => {
           <React19View />
         </div>
       </div>
+
+      <h2 className="demo-subtitle">Сравним код</h2>
+      <div className="demo-row">
+        <div className="demo-code">
+          <React18Code />
+        </div>
+        <div className="demo-preview">
+          <React19Code />
+        </div>
+      </div>
     </div>
   );
 };
