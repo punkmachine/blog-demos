@@ -8,6 +8,12 @@ function Navigation() {
         <Link to="/use-action-state" className="nav-button">
           useActionState
         </Link>
+        <Link to="/use-form-status" className="nav-button">
+          useFormStatus
+        </Link>
+        <Link to="/use-optimistic" className="nav-button">
+          useOptimistic
+        </Link>
       </div>
     </div>
   );
