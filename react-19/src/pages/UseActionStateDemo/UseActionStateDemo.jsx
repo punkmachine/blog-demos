@@ -2,6 +2,8 @@ import { React18Code } from './React18Code';
 import { React18View } from './React18View';
 import { React19Code } from './React19Code';
 import { React19View } from './React19View';
+import { ReactCodeAfter } from './ReactCodeAfter';
+import { ReactCodeBefore } from './ReactCodeBefore';
 
 export const UseActionStateDemo = () => {
   return (
@@ -29,10 +31,10 @@ export const UseActionStateDemo = () => {
       <h2 className="demo-subtitle">Сравним код</h2>
       <div className="demo-row">
         <div className="demo-code">
-          <React18Code />
+          <ReactCodeBefore />
         </div>
         <div className="demo-preview">
-          <React19Code />
+          <ReactCodeAfter />
         </div>
       </div>
     </div>
