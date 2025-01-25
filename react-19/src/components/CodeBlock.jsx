@@ -1,18 +1,49 @@
-import { useEffect } from 'react';
-import Prism from 'prismjs';
-import 'prismjs/components/prism-jsx';
-import '../prism-theme.css';
+import { useEffect, useState } from 'react';
+import { createHighlighter } from 'shiki';
+import { transformerNotationDiff } from '@shikijs/transformers';
+
+let highlighterInstance;
+
+// [!code --]
+// [!code ++]
+
+const getHighlighter = async () => {
+  if (!highlighterInstance) {
+    highlighterInstance = await createHighlighter({
+      themes: ['github-dark'],
+      langs: ['javascript', 'jsx', 'typescript', 'tsx'],
+    });
+  }
+  return highlighterInstance;
+};
 
 export const CodeBlock = ({ code }) => {
+  const [html, setHtml] = useState('');
+
   useEffect(() => {
-    Prism.highlightAll();
+    const highlight = async () => {
+      const highlighter = await getHighlighter();
+
+      const highlighted = await highlighter.codeToHtml(code, {
+        lang: 'jsx',
+        theme: 'github-dark',
+        transformers: [
+          transformerNotationDiff({
+            matchAlgorithm: 'v3'
+          })
+        ]
+      });
+
+      setHtml(highlighted);
+    };
+
+    highlight();
   }, [code]);
 
   return (
-    <pre className="code-block">
-      <code className="language-jsx">
-        {code}
-      </code>
-    </pre>
+    <div
+      className="code-block"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
   );
 };
