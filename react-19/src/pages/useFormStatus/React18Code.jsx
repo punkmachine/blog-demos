@@ -3,11 +3,7 @@ import { CodeBlock } from '../../components/CodeBlock';
 export const React18Code = () => {
   const code = `const ButtonForm = ({ isPending }) => {
   return (
-    <button
-      className="demo-button"
-      type="submit"
-      disabled={isPending}
-    >
+    <button type="submit" disabled={isPending}>
       {isPending ? "Обновление..." : "Обновить"}
     </button>
   );
@@ -32,17 +28,10 @@ export const Form = () => {
   };
 
   return (
-    <form className="demo-form" onSubmit={handleSubmit}>
-      <input
-        className="demo-input"
-        type="text"
-        name="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Введите имя"
-      />
+    <form onSubmit={handleSubmit}>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
       <ButtonForm isPending={isPending} />
-      {error && <p className="demo-error">{error}</p>}
+      {error && <p>{error}</p>}
     </form>
   );
 };`;

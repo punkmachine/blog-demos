@@ -16,17 +16,11 @@ export const React19Code = () => {
 
   return (
     <form action={formAction}>
-      <input
-        type="text"
-        name="name"
-        value={formState.name}
-      />
+      <input name="name" value={formState.name} />
       <button type="submit" disabled={isPending}>
         {isPending ? "Обновление..." : "Обновить"}
       </button>
-      {formState.error && (
-        <p className="error">{formState.error}</p>
-      )}
+      {formState.error && <p className="error">{formState.error}</p>}
     </form>
   );
 }`;

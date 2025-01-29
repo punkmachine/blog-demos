@@ -5,11 +5,7 @@ export const ReactCodeAfter = () => {
   const { pending } = useFormStatus(); // [!code ++]
 
   return (
-    <button
-      className="demo-button"
-      type="submit"
-      disabled={pending}
-    >
+    <button type="submit" disabled={pending}>
       {pending ? "Обновление..." : "Обновить"}
     </button>
   );
@@ -32,13 +28,9 @@ export const Form = () => {
 
   return (
     <form action={formAction}>
-      <input
-        type="text"
-        name="name"
-        placeholder="Введите имя"
-      />
+      <input type="text" name="name" />
       <ButtonForm />
-      {formState.error && (<p>{formState.error}</p>)}
+      {formState.error && <p>{formState.error}</p>}
     </form>
   );
 };`;

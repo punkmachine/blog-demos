@@ -21,12 +21,7 @@ export const React18Code = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+      <input value={name} onChange={(e) => setName(e.target.value)} />
       <button type="submit" disabled={isPending}>
         {isPending ? "Обновление..." : "Обновить"}
       </button>

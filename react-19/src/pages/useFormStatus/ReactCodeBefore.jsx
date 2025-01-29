@@ -3,11 +3,7 @@ import { CodeBlock } from '../../components/CodeBlock';
 export const ReactCodeBefore = () => {
   const code = `const ButtonForm = ({ isPending }) => { // [!code --]
   return (
-    <button
-      className="demo-button"
-      type="submit"
-      disabled={isPending}
-    >
+    <button type="submit" disabled={isPending}>
       {isPending ? "Обновление..." : "Обновить"}
     </button>
   );
@@ -32,18 +28,10 @@ export const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}> // [!code --]
-      <input
-        type="text"
-        name="name"
-        value={name} // [!code --]
-        onChange={(e) => setName(e.target.value)} // [!code --]
-        placeholder="Введите имя"
-      />
-      <ButtonForm
-        isPending={isPending} // [!code --]
-      />
-      {error && <p>{error}</p>} // [!code --]
+    <form onSubmit={handleSubmit}>
+      <input value={name}  onChange={(e) => setName(e.target.value)} />
+      <ButtonForm isPending={isPending} />
+      {error && <p>{error}</p>}
     </form>
   );
 };`;
