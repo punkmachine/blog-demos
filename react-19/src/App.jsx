@@ -5,6 +5,8 @@ import Navigation from './components/Navigation';
 import { UseActionStateDemo } from './pages/UseActionStateDemo/UseActionStateDemo';
 import { UseFormStatusDemo } from './pages/useFormStatus/UseFormStatus';
 import { UseOptimisticDemo } from './pages/UseOptimistic/UseOptimistic';
+import { UseComponent } from './pages/use/UseComponent';
+import { MetaTags } from './pages/metatags/MetaTags';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/use-action-state" element={<UseActionStateDemo />} />
           <Route path="/use-form-status" element={<UseFormStatusDemo />} />
           <Route path="/use-optimistic" element={<UseOptimisticDemo />} />
+          <Route path="/use" element={<UseComponent />} />
+          <Route path="/meta" element={<MetaTags />} />
         </Routes>
       </div>
     </Router>

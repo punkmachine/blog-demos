@@ -12,7 +12,7 @@ export const ReactCodeAfter = () => {
 };
 
 export const Form = () => {
-  const [formState, formAction] = useFormState( // [!code ++]
+  const [formState, formAction] = useActionState( // [!code ++]
     async (previousState, formData) => {
       const name = formData.get("name");
       const error = await updateName(name);

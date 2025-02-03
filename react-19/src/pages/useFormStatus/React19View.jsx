@@ -1,4 +1,5 @@
-import { useFormStatus, useFormState } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { updateName } from './updateName';
 
 const ButtonForm = () => {
@@ -16,7 +17,7 @@ const ButtonForm = () => {
 };
 
 export const React19View = () => {
-  const [formState, formAction] = useFormState(
+  const [formState, formAction] = useActionState(
     async (previousState, formData) => {
       const name = formData.get("name");
       const error = await updateName(name);

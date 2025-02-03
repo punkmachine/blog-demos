@@ -12,7 +12,7 @@ export const React19Code = () => {
 };
 
 export const Form = () => {
-  const [formState, formAction] = useFormState(
+  const [formState, formAction] = useActionState(
     async (previousState, formData) => {
       const name = formData.get("name");
       const error = await updateName(name);

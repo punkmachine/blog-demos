@@ -14,6 +14,12 @@ function Navigation() {
         <Link to="/use-optimistic" className="nav-button">
           useOptimistic
         </Link>
+        <Link to="/use" className="nav-button">
+          use
+        </Link>
+        {/* <Link to="/meta" className="nav-button">
+          meta
+        </Link> */}
       </div>
     </div>
   );
