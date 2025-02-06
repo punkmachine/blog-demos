@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { createHighlighter } from 'shiki';
 import { transformerNotationDiff } from '@shikijs/transformers';
@@ -17,7 +18,7 @@ const getHighlighter = async () => {
   return highlighterInstance;
 };
 
-export const CodeBlock = ({ code }) => {
+export const CodeBlock = ({ code }: { code: string }) => {
   const [html, setHtml] = useState('');
 
   useEffect(() => {

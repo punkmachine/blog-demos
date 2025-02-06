@@ -17,9 +17,9 @@ function Navigation() {
         <Link to="/use" className="nav-button">
           use
         </Link>
-        {/* <Link to="/meta" className="nav-button">
-          meta
-        </Link> */}
+        <Link to="/use-form-status-2" className="nav-button">
+          TS&Zod
+        </Link>
       </div>
     </div>
   );

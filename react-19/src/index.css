@@ -104,6 +104,10 @@ body {
   color: var(--text-color);
 }
 
+.demo-subtitle--center {
+  text-align: center;
+}
+
 .demo-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -228,4 +232,9 @@ body {
   color: var(--primary-color);
   margin-left: 0.5rem;
   font-style: italic;
+}
+
+.center-code {
+  max-width: 1000px;
+  margin: 0 auto;
 }
