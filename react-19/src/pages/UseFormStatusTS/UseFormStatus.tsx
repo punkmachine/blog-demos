@@ -1,5 +1,4 @@
 import React from 'react';
-import { React19Code } from './React19Code';
 import { React19View } from './React19View';
 import { CodeBlock } from '../../components/CodeBlock';
 
@@ -82,15 +81,6 @@ const newCode = `export const React19View = () => {
           <React19View />
         </div>
       </div>
-
-      {/* <div className="demo-row">
-        <div className="demo-code">
-          <React19Code />
-        </div>
-        <div className="demo-preview">
-          <React19View />
-        </div>
-      </div> */}
     </div>
   );
 };

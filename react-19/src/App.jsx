@@ -5,7 +5,7 @@ import Navigation from './components/Navigation';
 import { UseActionStateDemo } from './pages/UseActionStateDemo/UseActionStateDemo';
 import { UseFormStatusDemo } from './pages/useFormStatus/UseFormStatus';
 import { UseOptimisticDemo } from './pages/UseOptimistic/UseOptimistic';
-import { UseFormStatusDemo2 } from './pages/useFormStatusTS/UseFormStatus';
+import { UseFormStatusDemo2 } from './pages/UseFormStatusTS/UseFormStatus';
 import { UseComponent } from './pages/use/UseComponent';
 import { MetaTags } from './pages/metatags/MetaTags';
 
