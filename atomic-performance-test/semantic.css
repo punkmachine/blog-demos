@@ -1,0 +1,140 @@
+@keyframes user-table-header-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 1px 0 0 #334155;
+  }
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+}
+
+.user-table__header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #1e293b;
+  color: #f8fafc;
+  text-align: left;
+  font-weight: 600;
+  box-shadow: 0 1px 0 0 #334155;
+  animation: user-table-header-enter 0.45s ease-out;
+  transition: box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.user-table-wrapper:focus-within .user-table__header {
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.4);
+  background-color: #334155;
+}
+
+.user-table__header .user-table__cell {
+  padding: 12px 16px;
+  white-space: nowrap;
+  transition: color 0.2s ease, padding 0.2s ease;
+}
+
+.user-table__header .user-table__cell:nth-child(1) { min-width: 3rem; }
+.user-table__header .user-table__cell:nth-child(2) { min-width: 6rem; }
+.user-table__header .user-table__cell:nth-child(3) { min-width: 10rem; }
+.user-table__header .user-table__cell:nth-child(4) { min-width: 6rem; }
+
+.user-table__row {
+  background-color: #ffffff;
+  transition: background-color 0.15s ease, box-shadow 0.2s ease;
+}
+
+.user-table__row--even {
+  background-color: #f8fafc;
+}
+
+.user-table__row:hover {
+  background-color: #e2e8f0;
+}
+
+.user-table__row--even:hover {
+  background-color: #e2e8f0;
+}
+
+.user-table__row:is(:hover, :focus-within) {
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3);
+}
+
+.user-table tbody tr:nth-child(4n) {
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  transition: outline-color 0.2s ease;
+}
+
+.user-table tbody tr:nth-child(4n):hover {
+  outline-color: rgba(148, 163, 184, 0.4);
+}
+
+.user-table tbody tr:not(:first-child) .user-table__cell {
+  border-top-width: 0;
+}
+
+.user-table__row:has(.user-table__status--banned) {
+  border-left: 3px solid #b91c1c;
+  margin-left: 0;
+}
+
+.user-table__row:has(.user-table__status--active) .user-table__cell:first-child {
+  font-weight: 500;
+}
+
+.user-table__cell {
+  padding: 10px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.15s ease;
+}
+
+.user-table__cell:is(:first-child, :last-child) {
+  font-variant-numeric: tabular-nums;
+}
+
+.user-table__cell:not(.user-table__cell--email) {
+  letter-spacing: 0.01em;
+}
+
+.user-table__status--active {
+  color: #15803d;
+  font-weight: 500;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.user-table__status--pending {
+  color: #a16207;
+  font-weight: 500;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.user-table__status--banned {
+  color: #b91c1c;
+  font-weight: 500;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.user-table__status--active:hover,
+.user-table__status--pending:hover,
+.user-table__status--banned:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .user-table__cell--email {
+    display: none;
+  }
+
+  .user-table__header .user-table__cell--email {
+    display: none;
+  }
+}
